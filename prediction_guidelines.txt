@@ -1,0 +1,31 @@
+
+    
+    RISK ASSESSMENT THRESHOLDS:
+    ────────────────────────────────────────────────────────────────
+    
+    Low Risk (Green Zone):
+    • Prediction Probability: < 30%
+    • Action: Maintain current prevention measures
+    • Follow-up: Annual screening recommended
+    • Recommendations: Continue healthy lifestyle
+    
+    Moderate Risk (Yellow Zone):
+    • Prediction Probability: 30% - 70%
+    • Action: Recommend medical consultation
+    • Follow-up: DEXA scan within 6 months
+    • Recommendations: Enhanced prevention measures
+    
+    High Risk (Red Zone):
+    • Prediction Probability: > 70%
+    • Action: Urgent medical consultation required
+    • Follow-up: DEXA scan within 2 weeks
+    • Recommendations: Immediate clinical intervention
+    
+    ────────────────────────────────────────────────────────────────
+    
+    IMPORTANT NOTES:
+    • This model is for screening purposes only
+    • Always consult healthcare professionals for diagnosis
+    • DEXA scan remains the gold standard for diagnosis
+    • Model accuracy: Monitor and update regularly
+    

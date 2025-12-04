@@ -1,0 +1,11 @@
+Age,Hormonal Changes,Family History,Body Weight,Calcium Intake,Vitamin D Intake,Physical Activity,Smoking,Prior Fractures,Gender_Female,Gender_Male,Medications_Corticosteroids,Medications_Unknown,Medical Conditions_Hyperthyroidism,Medical Conditions_Rheumatoid Arthritis,Medical Conditions_Unknown,Alcohol Consumption_Moderate,Alcohol Consumption_Unknown
+35,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,1
+45,1,0,0,0,0,0,1,0,1,0,0,1,0,0,1,0,1
+55,1,1,1,1,1,1,0,1,1,0,0,1,0,0,1,1,0
+40,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,1
+65,1,1,0,1,1,0,1,1,1,0,1,0,0,1,0,0,1
+50,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,1
+72,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,1,0
+38,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,1
+60,1,0,1,0,1,0,1,0,1,0,0,1,0,0,1,1,0
+42,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,0,1
