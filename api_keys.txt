@@ -1,0 +1,17 @@
+# Osteoporosis Detection API - API Keys
+# Format: api_key:tier
+# DO NOT SHARE THESE KEYS - KEEP THEM SECURE
+# This file should be stored in a secure vault in production
+
+# Development Keys (for testing)
+osteo_key_dev_001:basic
+osteo_key_dev_002:basic
+
+# Production Keys
+osteo_key_prod_001:premium
+osteo_key_prod_002:premium
+osteo_key_prod_clinic_001:premium
+osteo_key_prod_hospital_001:premium
+
+# Premium Research Access
+osteo_key_research_001:premium

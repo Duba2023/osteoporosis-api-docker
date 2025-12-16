@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Osteoporosis Risk Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        input { margin: 5px; width: 60px; }
+        button { margin: 10px; padding: 10px; }
+        #result { margin-top: 20px; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Osteoporosis Risk Prediction</h1>
+    <form id="predictionForm" onsubmit="return false;">
+        <label>Age: <input id="Age" type="number" value="55"></label>
+        <label>HormonalChanges: <input id="HormonalChanges" type="number" value="0"></label>
+        <label>FamilyHistory: <input id="FamilyHistory" type="number" value="0"></label>
+        <label>BodyWeight: <input id="BodyWeight" type="number" value="70"></label>
+        <label>CalciumIntake: <input id="CalciumIntake" type="number" value="1"></label>
+        <label>VitaminDIntake: <input id="VitaminDIntake" type="number" value="1"></label>
+        <label>PhysicalActivity: <input id="PhysicalActivity" type="number" value="0"></label>
+        <label>Smoking: <input id="Smoking" type="number" value="0"></label>
+        <label>PriorFractures: <input id="PriorFractures" type="number" value="0"></label>
+        <label>GenderFemale: <input id="GenderFemale" type="number" value="1"></label>
+        <label>GenderMale: <input id="GenderMale" type="number" value="0"></label>
+        <label>MedicationsCorticosteroids: <input id="MedicationsCorticosteroids" type="number" value="0"></label>
+        <label>MedicationsUnknown: <input id="MedicationsUnknown" type="number" value="0"></label>
+        <label>MedicalConditionsHyperthyroidism: <input id="MedicalConditionsHyperthyroidism" type="number" value="0"></label>
+        <label>MedicalConditionsRheumatoidArthritis: <input id="MedicalConditionsRheumatoidArthritis" type="number" value="0"></label>
+        <label>MedicalConditionsUnknown: <input id="MedicalConditionsUnknown" type="number" value="0"></label>
+        <label>AlcoholConsumptionModerate: <input id="AlcoholConsumptionModerate" type="number" value="0"></label>
+        <label>AlcoholConsumptionUnknown: <input id="AlcoholConsumptionUnknown" type="number" value="0"></label>
+        <br>
+        <button onclick="predict()">Predict</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        async function predict() {
+            const data = {
+                Age: parseFloat(document.getElementById("Age").value),
+                HormonalChanges: parseInt(document.getElementById("HormonalChanges").value),
+                FamilyHistory: parseInt(document.getElementById("FamilyHistory").value),
+                BodyWeight: parseFloat(document.getElementById("BodyWeight").value),
+                CalciumIntake: parseInt(document.getElementById("CalciumIntake").value),
+                VitaminDIntake: parseInt(document.getElementById("VitaminDIntake").value),
+                PhysicalActivity: parseInt(document.getElementById("PhysicalActivity").value),
+                Smoking: parseInt(document.getElementById("Smoking").value),
+                PriorFractures: parseInt(document.getElementById("PriorFractures").value),
+                GenderFemale: parseInt(document.getElementById("GenderFemale").value),
+                GenderMale: parseInt(document.getElementById("GenderMale").value),
+                MedicationsCorticosteroids: parseInt(document.getElementById("MedicationsCorticosteroids").value),
+                MedicationsUnknown: parseInt(document.getElementById("MedicationsUnknown").value),
+                MedicalConditionsHyperthyroidism: parseInt(document.getElementById("MedicalConditionsHyperthyroidism").value),
+                MedicalConditionsRheumatoidArthritis: parseInt(document.getElementById("MedicalConditionsRheumatoidArthritis").value),
+                MedicalConditionsUnknown: parseInt(document.getElementById("MedicalConditionsUnknown").value),
+                AlcoholConsumptionModerate: parseInt(document.getElementById("AlcoholConsumptionModerate").value),
+                AlcoholConsumptionUnknown: parseInt(document.getElementById("AlcoholConsumptionUnknown").value)
+            };
+
+            const res = await fetch("/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            if (result.prediction !== undefined) {
+                document.getElementById("result").innerText = "Prediction: " + result.prediction;
+            } else if (result.error) {
+                document.getElementById("result").innerText = "Error: " + result.error;
+            }
+        }
+    </script>
+</body>
+</html>
